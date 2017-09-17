@@ -1,0 +1,636 @@
+/******************General
+******************/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: 'Raleway', sans-serif;
+  color: rgb(255,255,255);
+  padding-top: 260px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.background {
+  background-image: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0)), url(../img/city_sunset.jpg);
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  background-size: cover;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/******************Navigation
+******************/
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  z-index: 1000; /* fixes selector page image text problem */
+}
+
+.navbar {
+  background-color: rgba(42, 47, 86,1);
+  height: 100%;
+}
+
+.logo {
+  padding: 20px;
+}
+
+.logo a,
+.navbar a {
+  text-align: center;
+  display: block;
+
+}
+
+.logo span {
+  font-size: 150%;
+}
+
+.links ul {
+  list-style: none;
+}
+
+.links li {
+  padding-bottom: 40px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.links ul a:hover,
+.current {
+  text-decoration: underline;
+}
+
+/******************MAIN STYLES
+******************/
+
+main{
+  flex: 1 0 auto;
+  text-align: center;
+  color: rgba(42, 47, 86,1);
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.enlarge {
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.hoods_link a:hover {
+  color: rgba(255,255,255,1)
+}
+
+/******************HOME
+******************/
+
+.intro {
+  padding-bottom: 20px;
+}
+
+form h3 {
+  padding: 10px;
+}
+
+#button {
+  padding:5px 15px;
+  background: rgb(42, 47, 86);
+  border:0 none;
+  cursor:pointer;
+  color: white;
+  border-radius: 5px;
+}
+
+input[type=text] {
+    padding: 5px;
+    border: 1px solid rgb(42, 47, 86);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.hoods_link {
+  padding: 20px;
+  list-style: none;
+}
+
+/******************ABOUT
+******************/
+
+.grace_photo {
+  width: 50%;
+  min-width: 150px;
+  max-width: 420px;
+  border: 2px solid rgb(42, 47, 86);
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.about_p {
+  margin-bottom: 7px;
+}
+
+.about_app ul {
+  list-style: none;
+}
+
+/******************NEIGHBORHOODS
+******************/
+
+.hoods_links a {
+  display: block;
+}
+
+.hoods_links {
+  list-style: none;
+  padding-bottom: 20px;
+}
+
+.hoods_links li {
+  padding: 10px;
+}
+
+.hood_box img {
+  width: 50%;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.hood_box ol {
+  list-style: none;
+}
+
+.yes {
+  font-weight: 600;
+}
+
+.no {
+  text-decoration: line-through;
+}
+
+.hoods h2 {
+  padding-bottom: 5px;
+}
+
+.bio {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*******Hood Jump action [not needed in small viewport]*******/
+/*#inner_east:before {
+  display: block;
+  content: " ";
+  margin-top: -280px;
+  height: 280px;
+  visibility: hidden;
+}*/
+
+/*#outer_east:before {
+  display: block;
+  content: " ";
+  margin-top: -270px;
+  height: 270px;
+  visibility: hidden;
+}*/
+
+/*#northwest:before {
+  display: block;
+  content: " ";
+  margin-top: -270px;
+  height: 270px;
+  visibility: hidden;
+}
+
+#north:before {
+  display: block;
+  content: " ";
+  margin-top: -270px;
+  height: 270px;
+  visibility: hidden;
+}
+
+#southwest:before {
+  display: block;
+  content: " ";
+  margin-top: -270px;
+  height: 270px;
+  visibility: hidden;
+}
+
+#central:before {
+  display: block;
+  content: " ";
+  margin-top: -270px;
+  height: 270px;
+  visibility: hidden;
+}
+
+#sur_cities:before {
+  display: block;
+  content: " ";
+  margin-top: -270px;
+  height: 270px;
+  visibility: hidden;
+}*/
+
+/******************Footer
+******************/
+
+.copyright {
+  color: rgba(42, 47, 86,1);
+  text-align: center;
+  padding-top: 20px;
+}
+
+/******************MEDIA QUERIES
+******************/
+
+@media (min-width: 560px) {
+
+  /******************General
+  ******************/
+
+  header {
+    position: fixed;
+  }
+
+  body {
+    padding-top: 140px;
+  }
+
+  /******************Navigation
+  ******************/
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .links ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+  }
+
+  .links li {
+    padding-bottom: 0;
+    margin: 10px;
+  }
+
+  .logo {
+    width: 40px;
+  }
+
+  /******************Main Content
+  ******************/
+
+  main {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  /******************NEIGHBORHOODS
+  ******************/
+
+  .hoods_links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .hood_box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hood_box img {
+    max-width: 43%;
+  }
+
+  /*******Hood Jump action*******/
+  #inner_east:before {
+    display: block;
+    content: " ";
+    margin-top: -158px;
+    height: 158px;
+    visibility: hidden;
+  }
+
+  #outer_east:before {
+    display: block;
+    content: " ";
+    margin-top: -150px;
+    height: 150px;
+    visibility: hidden;
+  }
+
+  #northwest:before {
+    display: block;
+    content: " ";
+    margin-top: -148px;
+    height: 148px;
+    visibility: hidden;
+  }
+
+  #north:before {
+    display: block;
+    content: " ";
+    margin-top: -148px;
+    height: 148px;
+    visibility: hidden;
+  }
+
+  #southwest:before {
+    display: block;
+    content: " ";
+    margin-top: -148px;
+    height: 148px;
+    visibility: hidden;
+  }
+
+  #central:before {
+    display: block;
+    content: " ";
+    margin-top: -148px;
+    height: 148px;
+    visibility: hidden;
+  }
+
+  #sur_cities:before {
+    display: block;
+    content: " ";
+    margin-top: -148px;
+    height: 148px;
+    visibility: hidden;
+  }
+
+} /* <---- Media 560px */
+
+@media (min-width: 650px) {
+
+  /******************Main Content
+  ******************/
+
+    .intro {
+      width: 600px;
+      margin: 0 auto;
+    }
+
+    /******************Navigation
+    ******************/
+
+    .logo {
+      width: inherit;
+    }
+
+    /******************ABOUT
+    ******************/
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .grace {
+      display: flex;
+      align-items: center;
+    }
+
+    .about_app p {
+      padding: 7px;
+    }
+
+    .about_p {
+      margin-bottom: none;
+    }
+
+    .grace div,
+    .grace_photo {
+      width: 100%;
+    }
+
+    .grace_photo {
+      min-width: 250px;
+    }
+
+    .about_grace {
+      margin-left: 30px;
+    }
+
+    /******************NEIGHBORHOODS
+    ******************/
+
+    .hood_box img {
+      max-width: inherit;
+    }
+
+    /*******Hood Jump action*******/
+    #inner_east:before {
+      display: block;
+      content: " ";
+      margin-top: -120px;
+      height: 120px;
+      visibility: hidden;
+    }
+
+    #outer_east:before {
+      display: block;
+      content: " ";
+      margin-top: -115px;
+      height: 115px;
+      visibility: hidden;
+    }
+
+    #northwest:before {
+      display: block;
+      content: " ";
+      margin-top: -115px;
+      height: 115px;
+      visibility: hidden;
+    }
+
+    #north:before {
+      display: block;
+      content: " ";
+      margin-top: -115px;
+      height: 115px;
+      visibility: hidden;
+    }
+
+    #southwest:before {
+      display: block;
+      content: " ";
+      margin-top: -115px;
+      height: 115px;
+      visibility: hidden;
+    }
+
+    #central:before {
+      display: block;
+      content: " ";
+      margin-top: -115px;
+      height: 115px;
+      visibility: hidden;
+    }
+
+    #sur_cities:before {
+      display: block;
+      content: " ";
+      margin-top: -115px;
+      height: 115px;
+      visibility: hidden;
+    }
+
+} /* <---- Media 650px */
+
+@media (min-width: 734px) {
+
+  /******************NEIGHBORHOODS
+  ******************/
+
+  /*******Hood Jump action*******/
+  #inner_east:before {
+    display: block;
+    content: " ";
+    margin-top: -100px;
+    height: 100px;
+    visibility: hidden;
+  }
+
+  #outer_east:before {
+    display: block;
+    content: " ";
+    margin-top: -80px;
+    height: 80px;
+    visibility: hidden;
+  }
+
+  #northwest:before {
+    display: block;
+    content: " ";
+    margin-top: -80px;
+    height: 80px;
+    visibility: hidden;
+  }
+
+  #north:before {
+    display: block;
+    content: " ";
+    margin-top: -80px;
+    height: 80px;
+    visibility: hidden;
+  }
+
+  #southwest:before {
+    display: block;
+    content: " ";
+    margin-top: -80px;
+    height: 80px;
+    visibility: hidden;
+  }
+
+  #central:before {
+    display: block;
+    content: " ";
+    margin-top: -80px;
+    height: 80px;
+    visibility: hidden;
+  }
+
+  #sur_cities:before {
+    display: block;
+    content: " ";
+    margin-top: -80px;
+    height: 80px;
+    visibility: hidden;
+  }
+
+} /* <---- Media 734px */
+
+@media (min-width: 781px) {
+
+  /******************NEIGHBORHOODS
+  ******************/
+
+  .hoods_links {
+    justify-content: center;
+  }
+
+}
+
+@media (min-width: 850px) {
+
+  /******************ABOUT
+  ******************/
+
+  .creator_header {
+    text-align: left;
+  }
+
+  .app {
+    text-align: right;
+  }
+  .about {
+    justify-content: space-between;
+  }
+
+  .about_grace {
+    margin-right: 15px;
+  }
+
+  .col {
+    flex: 1;
+  }
+
+  .primary {
+    flex-grow: 2;
+  }
+
+  /******************NEIGHBORHOODS
+  ******************/
+
+  .hoods {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .hood_box {
+    flex-wrap: nowrap;
+  }
+
+  .hood_box img {
+    max-width: 300px;
+  }
+
+  .bio {
+    max-width: 30%;
+  }
+
+} /* <---- Media 850px */

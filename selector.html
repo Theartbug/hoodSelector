@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Welcome to Portland Neighborhood Selector</title>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/selector.css" rel="stylesheet" type="text/css">
+  </head>
+  <body class="background">
+    <header>
+      <nav class="navbar">
+        <div class="logo"><a href="index.html"><span>P</span>ortland <span>N</span>eighborhood <span>S</span>elector</a></div>
+        <div class="links">
+          <ul>
+            <li class="current"><a href="index.html">Home</a></li>
+            <li><a href="hoods.html">Neighborhoods</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="selector">
+      <h1 class="enlarge">The Selector</h1>
+      <p class="instruction">Discover the best neighborhood that meets your needs by picking what matters most to you. Click an image to get started, then submit when you are finished.</p>
+      <ul class="choices">
+          <li><img src="img/walking.png" alt="walkable" id="walkableImg" class="inactive"><span class="not_selected">Walkable</span></li>
+          <li><img src="img/transit.png" alt="transit" id="transitImg" class="inactive"><span class="not_selected">Transit</span></li>
+          <li><img src="img/sing_homes.png" alt="single_homes" id="single_homesImg" class="inactive"><span class="not_selected">Single Family</span></li>
+          <li><img src="img/apartments.png" alt="apartments" id="apartmentsImg" class="inactive"><span class="not_selected">Apartments</span></li>
+          <li><img src="img/hikable.png" alt="hikeable_parks" id="hikeable_parksImg" class="inactive"><span class="not_selected">Hikable Parks</span></li>
+          <li><img src="img/activity.png" alt="activity_parks" id="activity_parksImg" class="inactive"><span class="not_selected">Activity Parks</span></li>
+          <li><img src="img/nightlife.png" alt="nightlife" id="nightlifeImg" class="inactive"><span class="not_selected">Nightlife</span></li>
+          <li><img src="img/bikeable.png" alt="bikeable" id="bikeableImg" class="inactive"><span class="not_selected">Bikeable</span></li>
+          <li><img src="img/food.png" alt="unique_food" id="unique_foodImg" class="inactive"><span class="not_selected">Unique Food</span></li>
+          <li><img src="img/arts.png" alt="arts" id="artsImg" class="inactive"><span class="not_selected">Arts Scene</span></li>
+          <li><img src="img/traffic.png" alt="traffic_ok" id="traffic_okImg" class="inactive"><span class="not_selected">OK With Traffic</span></li>
+          <li><img src="img/affordable.png" alt="affordable" id="affordableImg" class="inactive"><span class="not_selected">Affordable</span></li>
+          <li><img src="img/sketchy.png" alt="not_sketchy" id="not_sketchyImg" class="inactive"><span class="not_selected">Not Sketchy</span></li>
+      </ul>
+      <form id="hood_form">
+        <input id="button" type="submit" value="Submit"/>
+        <input type="checkbox" name="Walkable" class="hidden" value="walkable" id="walkable">
+        <input type="checkbox" name="Transit" class="hidden" value="transit" id="transit">
+        <input type="checkbox" name="Single_homes" class="hidden" value="single_homes" id="single_homes">
+        <input type="checkbox" name="Apartments" class="hidden" value="apartments" id="apartments">
+        <input type="checkbox" name="Hikeable" class="hidden" value="hikeable_parks" id="hikeable_parks">
+        <input type="checkbox" name="Activity" class="hidden" value="activity_parks" id="activity_parks">
+        <input type="checkbox" name="Nightlife" class="hidden" value="nightlife" id="nightlife">
+        <input type="checkbox" name="Bikeable" class="hidden" value="bikeable" id="bikeable">
+        <input type="checkbox" name="Food" class="hidden" value="unique_food" id="unique_food">
+        <input type="checkbox" name="Arts" class="hidden" value="arts" id="arts">
+        <input type="checkbox" name="Traffic" class="hidden" value="traffic_ok" id="traffic_ok">
+        <input type="checkbox" name="Affordable" class="hidden" value="affordable" id="affordable">
+        <input type="checkbox" name="Sketchy" class="hidden" value="not_sketchy" id="not_sketchy">
+      </form>
+    </main>
+
+    <footer class="copyright"> Grace Provost &copy 2017</footer>
+
+    <script src="js/selector_app.js"></script>
+  </body>
+</html>
