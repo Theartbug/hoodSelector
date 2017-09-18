@@ -198,63 +198,6 @@ input[type=text] {
   margin-bottom: 10px;
 }
 
-/*******Hood Jump action [not needed in small viewport]*******/
-/*#inner_east:before {
-  display: block;
-  content: " ";
-  margin-top: -280px;
-  height: 280px;
-  visibility: hidden;
-}*/
-
-/*#outer_east:before {
-  display: block;
-  content: " ";
-  margin-top: -270px;
-  height: 270px;
-  visibility: hidden;
-}*/
-
-/*#northwest:before {
-  display: block;
-  content: " ";
-  margin-top: -270px;
-  height: 270px;
-  visibility: hidden;
-}
-
-#north:before {
-  display: block;
-  content: " ";
-  margin-top: -270px;
-  height: 270px;
-  visibility: hidden;
-}
-
-#southwest:before {
-  display: block;
-  content: " ";
-  margin-top: -270px;
-  height: 270px;
-  visibility: hidden;
-}
-
-#central:before {
-  display: block;
-  content: " ";
-  margin-top: -270px;
-  height: 270px;
-  visibility: hidden;
-}
-
-#sur_cities:before {
-  display: block;
-  content: " ";
-  margin-top: -270px;
-  height: 270px;
-  visibility: hidden;
-}*/
-
 /******************Footer
 ******************/
 
@@ -389,6 +332,13 @@ input[type=text] {
     margin-top: -148px;
     height: 148px;
     visibility: hidden;
+  }
+
+  /******************Results Page
+  ******************/
+
+  .results_box {
+    display: inline-block;
   }
 
 } /* <---- Media 560px */
@@ -631,6 +581,26 @@ input[type=text] {
 
   .bio {
     max-width: 30%;
+  }
+
+  /******************RESULTS PAGE
+  ******************/
+
+  .hoods_results {
+    padding-left: none;
+    padding-right: none;
+  }
+
+  .results_box {
+    display: inline-block;
+  }
+
+  .result_img {
+    max-width: 100%;
+  }
+
+  .result_bio {
+    max-width: 600px;
   }
 
 } /* <---- Media 850px */

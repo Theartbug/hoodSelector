@@ -43,13 +43,11 @@ const hoodsInfo = {
 };
 
 // GLOBAL VARIABLES
-// let userNameSaved = localStorage.getItem('userName');
+let userNameSaved = localStorage.getItem('userName');
 let userSelectedDesires = [];
 let userSubmitedDesires = [];
 let hoodScores = {};
-// let savedUsers = [];
-// let bestHood = '';
-// let bestHoodImg = '';
+let savedUsers = [];
 
 // DESIRE SELECTION
 (function selectDesires () {
@@ -96,32 +94,6 @@ window.onload = function () {
   } // if
 } //window onload
 
-//USER CONSTRUCTOR
-
-function UserConstructor(userName, userDesires) {
-  this.userName = userName;
-  // this.filePath = filePath;
-  // for(let i=0; i<userSelectedDesires.length; i++) {
-  //   this[userSelectedDesires[i]] = desires[i];
-  // }
-  savedUsers.push(this)
-  this.desires = desires;
-  this.matchesTotal = 0;
-}
-
-function buildUser (userName, userDesires) {
-  user = new UserConstruct(userName, userDesires);
-}
-
-// function buildHoods(hood, hoodsInfo) {
-//   hood = new UserConstructor(hood,'../imgs/' + hood + '.png', hoodsInfo);
-// }
-//
-// for (let j = 0; j < neighborhoods.length; j++) {
-//   buildHoods(neighborhoods[j], hoodsInfo[j]);
-// } // cycles through each hood to build
-
-
 //ADD DESIRES TO ARRAY
 
 function createSelectedDesiresArray () {
@@ -141,23 +113,40 @@ function compareSelectionsToHoods () {
   for (let hoodname in hoodsInfo){
     let hoodProps = hoodsInfo[hoodname];
     hoodScores[hoodname] = scoreHood (hoodProps.hasDesires, userSubmitedDesires);
-  } //loop through each user answer
+  } //loop through each hood desire array
 } // function end
 
-// scoreHood counts the number of boolean values that are the same
-//  between its two arrays of booleans
-
 function scoreHood (a1, a2) {
-  var score = 0;
+  let score = 0;
   for (let i = 0; i < a1.length; i++) {
       if (a1[i] === a2[i]) {
         score++;
       }
   }
     return score;
+} // scores the number of matching booleans in each array
+
+// RANK SCORED HOODS, SELECT BEST
+
+function findBestHood () {
+  let bestHood;
+  Object.keys(hoodScores).reduce(function(a, b){
+    bestHood = hoodScores[a] > hoodScores[b] ? a : b
+  });
+  return bestHood;
 }
 
+//USER CONSTRUCTOR, ADD BEST HOOD
 
+function UserConstructor(userName, matchedHood) {
+  this.userName = userName;
+  this.matchedHood = matchedHood;
+  savedUsers.push(this);
+}
+
+function buildUser (userName, matchedHood) {
+  let user = new UserConstructor(userName, matchedHood);
+}
 
 //FORM SUBMISSION
 
@@ -165,14 +154,13 @@ function hoodFormSubmit(event) {
   event.preventDefault();
   createSelectedDesiresArray ();
   compareSelectionsToHoods();
+  buildUser (userNameSaved, findBestHood());
+  localStorage.setItem('savedUsers', JSON.stringify(savedUsers)); // add to local storage
 
-  // userSelectedDesires = []; //clean slate
-  // localStorage.setItem['userSelectedDesires', userSelectedDesires]; //clean slate
+  userSelectedDesires = []; //clean slate
+  localStorage.setItem['userSelectedDesires', userSelectedDesires]; //clean slate
 
-  // toResults();
-//
-
-
+  toResults();
 }
 
 function toResults() {
