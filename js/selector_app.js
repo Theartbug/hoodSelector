@@ -128,13 +128,14 @@ function scoreHood (a1, a2) {
 
 // RANK SCORED HOODS, SELECT BEST
 
-function findBestHood () {
-  let bestHood;
-  Object.keys(hoodScores).reduce(function(a, b){
-    bestHood = hoodScores[a] > hoodScores[b] ? a : b
-  });
-  return bestHood;
-}
+// function findBestHood () {
+//   let bestHood;
+//   Object.keys(hoodScores).reduce(function(a, b){
+//     bestHood = hoodScores[a] > hoodScores[b] ? a : b
+//
+//   });
+//   return bestHood;
+// }
 
 //USER CONSTRUCTOR, ADD BEST HOOD
 
@@ -154,11 +155,13 @@ function hoodFormSubmit(event) {
   event.preventDefault();
   createSelectedDesiresArray ();
   compareSelectionsToHoods();
-  buildUser (userNameSaved, findBestHood());
+  buildUser (userNameSaved, Object.keys(hoodScores).reduce(function(a, b){
+   let bestHood = hoodScores[a] > hoodScores[b] ? a : b
+	return bestHood }));
   localStorage.setItem('savedUsers', JSON.stringify(savedUsers)); // add to local storage
 
   userSelectedDesires = []; //clean slate
-  localStorage.setItem['userSelectedDesires', userSelectedDesires]; //clean slate
+  localStorage.setItem('userSelectedDesires', userSelectedDesires); //clean slate
 
   toResults();
 }

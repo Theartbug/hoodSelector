@@ -24,17 +24,21 @@
       <h1 class="enlarge">Welcome to Portland</h1>
       <p class="intro">Interested in finding the best Portland neighborhood to fit your needs? Take this short quiz to help select the right area for you!</p>
       <form id="form">
-        <h3>Enter Your Name to Begin:</h3>
+        <h3 class="nameEntry">Enter Your Name to Begin:</h3>
         <input id="userName" type="text" name="name" required/>
         <input id="button" type="submit" value="Submit"/>
       </form>
       <p class="hoods_link"><a href="hoods.html">Or view all of the neighborhoods</a></p>
-      <div id="hood_results">
+      <h2 id="hood_name"></h2>
+      <div class="results_box">
+        <img id="result_img">
+        <div id="hood_results">
 
+        </div>
       </div>
     </main>
 
-    <footer class="copyright"> Grace Provost &copy 2017</footer>
+    <footer class="copyright"> Grace Provost &copy; 2017</footer>
 
     <script src="js/app.js"></script>
   </body>
