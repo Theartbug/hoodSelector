@@ -126,20 +126,25 @@ function scoreHood (a1, a2) {
     return score;
 } // scores the number of matching booleans in each array
 
-// RANK SCORED HOODS, SELECT BEST
+// RANK SCORED HOODS, SHUFFLE IF NEEDED, SELECT BEST
 
-// function findBestHood () {
-//   let bestHood;
-//   Object.keys(hoodScores).reduce(function(a, b){
-//     bestHood = hoodScores[a] > hoodScores[b] ? a : b
-//
-//   });
-//   return bestHood;
-// }
-
-// SHUFFLE HOODS IF MORE THAN ONE BEST
-
-
+function findBestMatch () {
+  let keys = Object.keys(hoodScores),
+  largest = Math.max.apply(null, keys.map(x => hoodScores[x])), //selects largest value
+  result = keys.reduce((result, key) => { // places names of hoods into an array if they match highest score
+    if (hoodScores[key] === largest) {
+       result.push(key);
+     }
+     return result;
+   }, []);
+   if (result.length > 1) { //if multiple best matches, shuffle them (Fisher-Yates)
+     for (let i = result.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+    }
+  return result[0];
+}
 
 //USER CONSTRUCTOR, ADD BEST HOOD
 
@@ -159,9 +164,9 @@ function hoodFormSubmit(event) {
   event.preventDefault();
   createSelectedDesiresArray ();
   compareSelectionsToHoods();
-  buildUser (userNameSaved, Object.keys(hoodScores).reduce(function(a, b){
-   let bestHood = hoodScores[a] > hoodScores[b] ? a : b
-	return bestHood }));
+
+  buildUser (userNameSaved, findBestMatch());
+
   localStorage.setItem('savedUsers', JSON.stringify(savedUsers)); // add to local storage
 
   userSelectedDesires = []; //clean slate
