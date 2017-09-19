@@ -219,6 +219,17 @@ input[type=text] {
   font-size: 12px;
 }
 
+/******************JUMP ACTION
+******************/
+
+#top:before {
+  display: block;
+  content: " ";
+  margin-top: -450px;
+  height: 450px;
+  visibility: hidden;
+}
+
 /******************RESULTS PAGE
 ******************/
 
