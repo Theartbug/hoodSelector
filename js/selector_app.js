@@ -137,6 +137,10 @@ function scoreHood (a1, a2) {
 //   return bestHood;
 // }
 
+// SHUFFLE HOODS IF MORE THAN ONE BEST
+
+
+
 //USER CONSTRUCTOR, ADD BEST HOOD
 
 function UserConstructor(userName, matchedHood) {
